@@ -1,58 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
-
+// import { Container } from "@mui/system";
+import React from "react";
+import styled from "styled-components";
+import Header from "./Components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import Drive from "./Components/Drive";
+import Model from "./Components/Model";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Container>
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Drive />} />
+        </Routes>
+      </Container>
+      <Model />
+    </Router>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+`;
