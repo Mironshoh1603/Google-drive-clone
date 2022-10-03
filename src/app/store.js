@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import boolReducer from "../Slices/Bool/boolSlice";
-import photoReducer from "../Slices/photodisplay/photoSlice";
+import photoReducer from "../Slices/photodisplay/photoslice";
 import userReducer from "../Slices/user/userSlice";
 import folderReducer from "../Slices/channel/channelSlice";
 
