@@ -1,11 +1,17 @@
 import { InsertPhoto } from "@material-ui/icons";
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { setPhotoDisplay } from "../Slices/photodisplay/photoslice";
 
 function FileList({ img, title }) {
+  const dispatch = useDispatch();
+  const PhotoSelector = () => {
+    dispatch(setPhotoDisplay({ photo: img, title: title }));
+  };
   return (
     <Container>
-      <PhotoContainer>
+      <PhotoContainer onClick={PhotoSelector}>
         <img src={img} alt="" />
       </PhotoContainer>
       <PhotoTitle>
@@ -60,6 +66,5 @@ const PhotoTitle = styled.div`
     padding-bottom: 4px;
     font-size: 13px;
     font-weight: 600;
-
   }
 `;

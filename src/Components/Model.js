@@ -1,23 +1,24 @@
 // import { Container } from "@mui/system";
 import { AddPhotoAlternate, CreateNewFolder } from "@material-ui/icons";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { selectModelBool } from "../Slices/Bool/boolSlice";
+import { selectModelBool, setBoolean } from "../Slices/Bool/boolSlice";
 
 function Model() {
   const selectModel = useSelector(selectModelBool);
+  const dispatch = useDispatch();
   return (
     <Container bool={selectModel}>
       <Wrapper>
         <Header>
-          <Wraps>
+          <Wraps onClick={() => dispatch(setBoolean({ folderBool: true }))}>
             <CreateNewFolder />
             <span>Folder</span>
           </Wraps>
         </Header>
         <Header>
-          <Wraps>
+          <Wraps onClick={() => dispatch(setBoolean({ photo: true }))}>
             <AddPhotoAlternate />
             <span> </span>
           </Wraps>

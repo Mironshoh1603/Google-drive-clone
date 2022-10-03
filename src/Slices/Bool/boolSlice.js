@@ -25,4 +25,4 @@ export const selectModelBool = (state) => state.bool.modelBools;
 export const selectPhotoBool = (state) => state.bool.photo;
 
 export default booleanSlice.reducer;
- 
+

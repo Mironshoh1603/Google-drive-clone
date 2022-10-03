@@ -5,8 +5,11 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { Avatar, ButtonGroup } from "@mui/material";
+import { useSelector } from "react-redux";
+import { selectPhoto } from "../Slices/user/userSlice";
 
 function Header() {
+  const photo = useSelector(selectPhoto);
   return (
     <Container>
       <Wrapper>
@@ -32,7 +35,7 @@ function Header() {
           </LeftSection>
           <RightSection>
             <AppsOutlinedIcon className="app" />
-            <Avatar />
+            <Avatar src={photo} />
           </RightSection>
         </RightContainer>
       </Wrapper>
