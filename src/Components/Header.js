@@ -17,7 +17,7 @@ function Header() {
       <Wrapper>
         <Link to="/">
           <Logo>
-            <img src="/img/google-logo.png" alt="" />
+            <img src="/img/google-logo.png" alt="drive" />
             <span>Drive</span>
           </Logo>
         </Link>
